@@ -1,0 +1,86 @@
+/* Definición de variables CSS para los modos de color */
+:root {
+    --bg-color: #ffffff; /* Fondo blanco */
+    --text-color: #333333; /* Texto gris oscuro para alto contraste */
+    --primary-color: #3182ce; /* Azul primario */
+    --secondary-color: #2b6cb0; /* Azul secundario */
+    --border-color: #e2e8f0; /* Borde claro */
+    --card-bg-color: #f7fafc; /* Fondo de tarjeta claro */
+}
+.dark-mode {
+    --bg-color: #1a202c; /* Fondo oscuro */
+    --text-color: #e2e8f0; /* Texto claro */
+    --primary-color: #4299e1; /* Azul primario (más claro) */
+    --secondary-color: #2c5282; /* Azul secundario (más claro) */
+    --border-color: #2d3748; /* Borde oscuro */
+    /* El fondo de la tarjeta es un poco más claro para un mejor contraste */
+    --card-bg-color: #2d3748; 
+}
+
+/* Estilos generales del cuerpo, usa las variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para los botones de navegación */
+.nav-button {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Estilo de enfoque para la accesibilidad del teclado (WCAG 2.2) */
+a:focus, button:focus, input:focus, .card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Enlace para saltar al contenido principal (WCAG 2.2) */
+.skip-link {
+    position: absolute;
+    top: -999px;
+    left: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+}
+.skip-link:focus {
+    top: 0;
+    outline: none; /* Elimina el outline adicional del foco */
+}
+
+/* Estilos para el formulario de validación */
+.error-message {
+    color: #e53e3e; /* Rojo */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Estilos para asegurar el contraste de las tarjetas */
+.card {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+.card h3, .card p {
+    color: var(--text-color);
+}
+
+/* Estilos de los inputs y labels del formulario para el modo oscuro */
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"] {
+    background-color: #2d3748;
+    color: var(--text-color);
+    border-color: #4a5568;
+}
+
+/* Este es el cambio que nos solicitaste, para que el texto de las etiquetas se vea bien en modo oscuro */
+.dark-mode label {
+    color: #b7bdc4; /* Color de texto claro para las etiquetas */
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG 2.2 Prototipo</title>
+    <!-- Incluye Tailwind CSS para un estilo rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased transition-colors duration-300">
+    <!-- Enlace para saltar al contenido principal, visible solo al enfocar con el teclado -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Saltar al contenido principal</a>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="bg-white dark:bg-gray-800 shadow-md p-4 sticky top-0 z-50 transition-colors duration-300">
+        <!-- Contenedor de navegación con colores de texto consistentes -->
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo de la aplicación, con un enlace a la página de inicio -->
+             <div class="flex items-center space-x-2">
+                <!-- Nuevo logo -->
+                <a href="#home-view" class="flex items-center space-x-2">
+                    <img src="imagen/logo1.png" alt="Logo de Mi Aplicación" class="h-12 w-full max-w-xs object-contain">
+                    <h1 id="site-title" class="text-xl font-bold text-gray-900 dark:text-white">Mi Aplicación</h1>
+                </a>
+                </div>
+            
+            <!-- Navegación principal, con etiquetas semánticas y color de texto mejorado para el modo oscuro -->
+            <ul class="flex space-x-4 text-gray-900 dark:text-gray-200">
+                <li><button id="home-btn" class="nav-button p-2 font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" aria-label="Ir a la página de inicio">Inicio</button></li>
+                <li><button id="form-btn" class="nav-button p-2 font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" aria-label="Ir a la página de registro">Registro</button></li>
+                <li><button id="dashboard-btn" class="nav-button p-2 font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" aria-label="Ir al panel de control">Panel</button></li>
+            </ul>
+
+            <!-- Botón para alternar el modo oscuro/claro -->
+            <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Alternar modo oscuro">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE LA APLICACIÓN -->
+    <main id="main-content" class="container mx-auto p-6 md:p-8 lg:p-12">
+        
+        <!-- VISTA DE INICIO -->
+        <div id="home-view" class="view">
+            <section class="text-center my-12">
+                <h2 class="text-3xl font-bold">Bienvenido a la Aplicación de mis Sueños</h2>
+                <p class="mt-4 text-lg">
+                    Un prototipo construido con los más altos estándares de accesibilidad, siguiendo las directrices WCAG 2.2.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <img src="https://placehold.co/600x400/3182ce/ffffff?text=Aplicacion" alt="Un dibujo abstracto que representa la aplicación en diferentes dispositivos, mostrando su diseño responsivo y su enfoque en la experiencia de usuario." class="w-full max-w-lg rounded-lg shadow-xl" />
+                </div>
+                <!-- Contenedor del botón "¡Empieza ahora!" -->
+                <div class="mt-8 flex justify-center">
+                    <!-- Reemplazamos el botón por una imagen -->
+                    <img id="cta-btn" src="https://placehold.co/200x50/3b82f6/ffffff?text=Empieza+ahora" alt="Botón con texto 'Empieza ahora'" class="rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 cursor-pointer" />
+                </div>
+            </section>
+
+            <section class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2">Diseño Responsivo</h3>
+                    <p>Nuestro diseño se adapta a cualquier tamaño de pantalla, ofreciendo una experiencia consistente en móviles, tablets y escritorios.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2">Accesibilidad Total</h3>
+                    <p>Cumplimos con WCAG 2.2 para garantizar que personas con diversas capacidades puedan utilizar nuestra aplicación sin barreras 
+                        estas pautas, desarrolladas por el Consorcio World Wide Web (W3C), ofrecen estándares técnicos y metodologías para que los sitios web sean 
+                        utilizables por todos, incluyendo personas con discapacidades visuales, auditivas, cognitivas, motoras y neurológicas..</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold mb-2">Modo Claro/Oscuro</h3>
+                    <p>Permitimos a los usuarios elegir el tema visual que mejor se adapte a sus preferencias y condiciones de iluminación.</p>
+                </div>
+            </section>
+
+            <!-- NUEVA SECCIÓN CON IMAGEN -->
+            <section class="mt-16 text-center">
+                <h2 class="text-2xl font-bold mb-4">Tecnologías Modernas</h2>
+                <div class="flex justify-center">
+                    <!-- Imagen de la sección de tecnología -->
+                    <img src="imagen/imagen_1.png" alt="Ilustración que representa tecnologías modernas" class="rounded-lg shadow-xl max-w-sm h-auto" />
+                </div>
+            </section>
+        </div>
+
+        <!-- VISTA DE REGISTRO -->
+        <div id="form-view" class="view hidden">
+            <section class="max-w-lg mx-auto text-center my-12">
+                <h2 class="text-3xl font-bold">Regístrate en Mi Aplicación</h2>
+                <p class="mt-4 text-lg">Crea una cuenta para acceder a todas las funcionalidades y al panel de control exclusivo.</p>
+                
+                <!-- Contenedor del formulario, ahora con fondo gris oscuro consistente -->
+                <div class="mt-8 bg-gray-800 text-white rounded-lg shadow-xl p-8">
+                    <form id="registration-form" class="mt-6 space-y-6 text-left">
+                        <div>
+                            <!-- Etiquetas y campos de entrada con texto blanco para asegurar la legibilidad -->
+                            <label for="name" class="block text-sm font-medium text-white">Nombre completo</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-700 border-gray-600 text-white" aria-describedby="name-error">
+                            <p id="name-error" class="error-message hidden" role="alert" aria-live="polite"></p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-700 border-gray-600 text-white" aria-describedby="email-error">
+                            <p id="email-error" class="error-message hidden" role="alert" aria-live="polite"></p>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-white">Contraseña</label>
+                            <input type="password" id="password" name="password" required minlength="8" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-700 border-gray-600 text-white" aria-describedby="password-error">
+                            <p id="password-error" class="error-message hidden" role="alert" aria-live="polite"></p>
+                        </div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-color hover:bg-secondary-color focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Crear cuenta
+                        </button>
+                        <p id="form-success-message" class="text-green-500 text-center hidden" role="status" aria-live="polite">¡Registro exitoso!</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- VISTA DE PANEL DE CONTROL -->
+        <div id="dashboard-view" class="view hidden">
+            <section class="text-center my-12">
+                <h2 class="text-3xl font-bold">Panel de Control</h2>
+                <p class="mt-4 text-lg">Bienvenid@s a tu panel de usuario.
+                     Aquí encontrarás información personalizada y funcionalidades clave de la aplicación.</p>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjetas del panel de control con fondo gris oscuro consistente -->
+                    <div class="bg-gray-800 text-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2">Resumen de Actividad</h3>
+                        <p>Consulta tus últimas acciones y estadísticas, y mantente al día con tu progreso.</p>
+                    </div>
+                    <div class="bg-gray-800 text-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2">Configuración de Perfil</h3>
+                        <p>Actualiza tu información personal, cambia tu contraseña y gestiona tus preferencias de privacidad.</p>
+                    </div>
+                    <div class="bg-gray-800 text-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold mb-2">Ayuda y Soporte</h3>
+                        <p>Accede a nuestra base de conocimientos, preguntas frecuentes y contacta con nuestro equipo de soporte.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-gray-100 dark:bg-gray-900 p-4 mt-8 transition-colors duration-300">
+        <div class="container mx-auto text-center text-gray-900 dark:text-white">
+            <p>&copy; 2025 Mi Aplicación. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
